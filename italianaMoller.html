@@ -1,324 +1,315 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <!-- CSS BOOSTRAP --> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <head>
+        <!-- CSS BOOSTRAP -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
 
-    <!-- Estilos --> 
-    <link rel="stylesheet" href="css/clase.css">
+        <!-- Estilos -->
+        <link rel="stylesheet" href="css/clase.css" />
 
-    <title>Chess</title>
+        <title>Chess</title>
 
-    <h1> Apertura Italiana: Ataque Moller </h1>
-    <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="js/chessboard-1.0.0.min.js"></script>
-    <script src="js/chess.js"></script>
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <script>
-                var indice = 0;
-                let posiciones = ["rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
-                              "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR", "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR",
-                              "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R", "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R",
-                              "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R", "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R", 
-                              "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R", "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R", 
-                              "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R", "r1bqk2r/pppp1ppp/2n2n2/2b5/2BpP3/2P2N2/PP3PPP/RNBQK2R", 
-                              "r1bqk2r/pppp1ppp/2n2n2/2b5/2BPP3/5N2/PP3PPP/RNBQK2R", "r1bqk2r/pppp1ppp/2n2n2/8/1bBPP3/5N2/PP3PPP/RNBQK2R", 
-                              "r1bqk2r/pppp1ppp/2n2n2/8/1bBPP3/2N2N2/PP3PPP/R1BQK2R", "r1bqk2r/pppp1ppp/2n5/8/1bBPn3/2N2N2/PP3PPP/R1BQK2R", 
-                              "r1bqk2r/pppp1ppp/2n5/8/1bBPn3/2N2N2/PP3PPP/R1BQ1RK1", "r1bqk2r/pppp1ppp/2n5/8/2BPn3/2b2N2/PP3PPP/R1BQ1RK1", 
-                              "r1bqk2r/pppp1ppp/2n5/3P4/2B1n3/2b2N2/PP3PPP/R1BQ1RK1", "r1bqk2r/pppp1ppp/2n2b2/3P4/2B1n3/5N2/PP3PPP/R1BQ1RK1", 
-                              "r1bqk2r/pppp1ppp/2n2b2/3P4/2B1n3/5N2/PP3PPP/R1BQR1K1", "r1bqk2r/ppppnppp/5b2/3P4/2B1n3/5N2/PP3PPP/R1BQR1K1", 
-                              "r1bqk2r/ppppnppp/5b2/3P4/2B1R3/5N2/PP3PPP/R1BQ2K1"
-                            ]
-                posiciones.forEach(function(elemento, indice, array) {
-                console.log(elemento, indice);
-})
-            </script>
-            <!--Tablero-->
+        <h1>Apertura Italiana: Ataque Moller</h1>
+        <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="js/chessboard-1.0.0.min.js"></script>
+        <script src="js/chess.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <!--Tablero-->
 
-            <div class="col-8">
+                <div class="col-8">
+                    <div id="myBoard" style="width: 90%"></div>
 
-                <div id="myBoard" style="width: 80%"></div>
-                <script>
-                    var config = {
-                        position: 'start'
-                    }
-                    var board = Chessboard('myBoard', config)
-                </script>
-
-                <div></div>
-
-                <div class="btn-group">
-                    <button id="initialPositionBtn" type="button" class="btn btn-outline-secondary">Inicio</button>
-                    <button id="antMovimiento" type="button" class="btn btn-outline-primary">Atras</button>
-                    <button id="sigMovimiento" type="button" class="btn btn-outline-success">Adelante</button>
-                    <button id="flipOrientationBtn" type="button" class="btn btn-outline-dark">Girar Tablero</button>
+                    <div class="btn-group mt-3" style="width: 90%">
+                        <button
+                            id="initialPositionBtn"
+                            type="button"
+                            class="btn btn-outline-secondary"
+                        >
+                            Inicio
+                        </button>
+                        <button
+                            id="antMovimiento"
+                            type="button"
+                            class="btn btn-outline-primary"
+                        >
+                            Atras
+                        </button>
+                        <button
+                            id="sigMovimiento"
+                            type="button"
+                            class="btn btn-outline-success"
+                        >
+                            Adelante
+                        </button>
+                        <button
+                            id="flipOrientationBtn"
+                            type="button"
+                            class="btn btn-outline-dark"
+                        >
+                            Girar Tablero
+                        </button>
+                    </div>
                 </div>
 
-                <script>
-                    function clickInitialPositionBtn () {
-                        board.position('start')
-                        indice = 0;
-                    }
-                    $('#initialPositionBtn').on('click', clickInitialPositionBtn)
+                <!--Posiciones table-wrapper-scroll-y my-custom-scrollbar -->
 
-                    function clicksigMovimiento () {
-                        if(indice<21){
-                            board.position(posiciones[indice+1])
-                            indice = indice + 1;
-                        }
-                        
-                    }
-                    $('#sigMovimiento').on('click', clicksigMovimiento)
-
-                    function clickantMovimiento () {
-                        if(indice>0){
-                            board.position(posiciones[indice-1])
-                            indice = indice - 1;
-                        }
-                    }
-                    $('#antMovimiento').on('click', clickantMovimiento)
-
-                    $('#flipOrientationBtn').on('click', board.flip)
-                </script>
-            </div>
-            
-            <!--Posiciones table-wrapper-scroll-y my-custom-scrollbar -->    
-
-            <div class="col-4">
-                <table class="table table-sm table-bordered table-dark table-hover" data-toggle="table"
-                data-url="/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/"
-                data-show-columns="true">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Blancas</th>
-                            <th scope="col">Negras</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td id="mb1">e4</td>
-                            <td id="mn1">e5</td>
-                            <script>
-                                $('#mb1').on('click', function () {
-                                    board.position(posiciones[1])
-                                    indice = 1;
-                                });
-                                $('#mn1').on('click', function () {
-                                    //board.position('rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR')
-                                    board.position(posiciones[2])
-                                    indice = 2;
-                                });
-                            </script>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td id="mb2">Cf3</td>
-                            <td id="mn2">Cc6</td>
-                            <script>
-                                $('#mb2').on('click', function () {
-                                    board.position(posiciones[3])
-                                    indice = 3;
-                                });
-                                $('#mn2').on('click', function () {
-                                    board.position(posiciones[4])
-                                    indice = 4;
-                                });
-                            </script>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td id="mb3">Ac4</td>
-                            <td id="mn3">Ac5</td>
-                            <script>
-                                $('#mb3').on('click', function () {
-                                    board.position(posiciones[5])
-                                    indice = 5;
-                                });
-                                $('#mn3').on('click', function () {
-                                    board.position(posiciones[6])
-                                    indice = 6;
-                                });
-                            </script>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td colspan="2">Posición de la Apertura Italiana.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td id="mb4">c3</td>
-                            <td id="mn4">Cc6</td>
-                            <script>
-                                $('#mb4').on('click', function () {
-                                    board.position(posiciones[7])
-                                    indice = 7;
-                                });
-                                $('#mn4').on('click', function () {
-                                    board.position(posiciones[8])
-                                    indice = 8;
-                                });
-                            </script>
-                        </tr>
-                        <tr>
-                            <th scope="row">5</th>
-                            <td id="mb5">d4</td>
-                            <td id="mn5">exd4</td>
-                            <script>
-                                $('#mb5').on('click', function () {
-                                    board.position(posiciones[9])
-                                    indice = 9;
-                                });
-                                $('#mn5').on('click', function () {
-                                    board.position(posiciones[10])
-                                    indice = 10;
-                                });
-                            </script>
-                        </tr>
-                        <tr>
-                            <th scope="row">6</th>
-                            <td id="mb6">cxd4</td>
-                            <td id="mn6">Ab4+</td>
-                            <script>
-                                $('#mb6').on('click', function () {
-                                    board.position(posiciones[11])
-                                    indice = 11;
-                                });
-                                $('#mn6').on('click', function () {
-                                    board.position(posiciones[12])
-                                    indice = 12;
-                                });
-                            </script>
-                        </tr>
-                        <tr>
-                            <th scope="row">7</th>
-                            <td id="mb7">Cc3</td>
-                            <td id="mn7">Cxe4</td>
-                            <script>
-                                $('#mb7').on('click', function () {
-                                    board.position(posiciones[13])
-                                    indice = 13;
-                                });
-                                $('#mn7').on('click', function () {
-                                    board.position(posiciones[14])
-                                    indice = 14;
-                                });
-                            </script>
-                        </tr>
-                        <tr>
-                            <th scope="row">8</th>
-                            <td id="mb8">O-O</td>
-                            <td>...</td>
-                            <script>
-                                $('#mb8').on('click', function () {
-                                    board.position(posiciones[15])
-                                    indice = 15;
-                                });
-                            </script>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td colspan="2">En la octava movida del Ataque Greco, 
-                                se efectúa la captura en c3 con el caballo, 
-                                en tanto que en esta línea se hace con el alfil.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">8</th>
-                            <td>...</td>
-                            <td id="mn8">Axc3</td>
-                            <script>
-                                $('#mn8').on('click', function () {
-                                    board.position(posiciones[16])
-                                    indice = 16;
-                                });
-                            </script>
-                        </tr>
-                        <tr>
-                            <th scope="row">9</th>
-                            <td id="mb9">d5!</td>
-                            <td>...</td>
-                            <script>
-                                $('#mb9').on('click', function () {
-                                    board.position(posiciones[17])
-                                    indice = 17;
-                                });
-                            </script>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td colspan="2">Esta jugada constituye el citado Ataque Möller, 
-                                una movida evitando que el peón de dama negro incomode
-                                al Alfil Italiano, lo cual es factible ocupando
-                                ese mismo escaque, a la vez que se ataca
-                                al caballo sito en c6.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">9</th>
-                            <td>...</td>
-                            <td id="mn9">Af6</td>
-                            <script>
-                                $('#mn9').on('click', function () {
-                                    board.position(posiciones[18])
-                                    indice = 18;
-                                });
-                            </script>
-                        </tr>
-                        <tr>
-                            <th scope="row">10</th>
-                            <td id="mb10">Te1</td>
-                            <td>...</td>
-                            <script>
-                                $('#mb10').on('click', function () {
-                                    board.position(posiciones[19])
-                                    indice = 19;
-                                });
-                            </script>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td colspan="2">Con esta jugada, las blancas mantienen
-                                la tensión del ataque mientras amenazan dos
-                                piezas simultáneamente.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">10</th>
-                            <td>...</td>
-                            <td id="mn10">Ce7</td>
-                            <script>
-                                $('#mn10').on('click', function () {
-                                    board.position(posiciones[20])
-                                    indice = 20;
-                                });
-                            </script>
-                        </tr>
-                        <tr>
-                            <th scope="row">11</th>
-                            <td id="mb11">Txe4</td>
-                            <td>...</td>
-                            <script>
-                                $('#mb11').on('click', function () {
-                                    board.position(posiciones[21])
-                                    indice = 21;
-                                });
-                            </script>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td colspan="2">Alcanzada esta posición, dos grandes líneas se abren, a saber: 11...d6 o 11... O-O.</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="col-4 overflow-auto" style="height: 70vh">
+                    <table
+                        id="table"
+                        class="
+                            table table-sm table-bordered table-dark table-hover
+                        "
+                        data-toggle="table"
+                        data-url="/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/"
+                        data-show-columns="true"
+                    >
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Blancas</th>
+                                <th scope="col">Negras</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td id="mb1">e4</td>
+                                <td id="mn1" click="mifuncion(i)">e5</td>
+                                <script>
+                                    // $("#mb1").on("click", function () {
+                                    //     board.position(posiciones[1]);
+                                    //     indice = 1;
+                                    // });
+                                    // $("#mn1").on("click", function () {
+                                    //     //board.position('rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR')
+                                    //     board.position(posiciones[2]);
+                                    //     indice = 2;
+                                    // });
+                                </script>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td id="mb2">Cf3</td>
+                                <td id="mn2">Cc6</td>
+                                <!-- <script>
+                                    $("#mb2").on("click", function () {
+                                        board.position(posiciones[3]);
+                                        indice = 3;
+                                    });
+                                    $("#mn2").on("click", function () {
+                                        board.position(posiciones[4]);
+                                        indice = 4;
+                                    });
+                                </script> -->
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td id="mb3">Ac4</td>
+                                <td id="mn3">Ac5</td>
+                                <!-- <script>
+                                    $("#mb3").on("click", function () {
+                                        board.position(posiciones[5]);
+                                        indice = 5;
+                                    });
+                                    $("#mn3").on("click", function () {
+                                        board.position(posiciones[6]);
+                                        indice = 6;
+                                    });
+                                </script> -->
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Posición de la Apertura Italiana.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td id="mb4">c3</td>
+                                <td id="mn4">Cc6</td>
+                                <!-- <script>
+                                    $("#mb4").on("click", function () {
+                                        board.position(posiciones[7]);
+                                        indice = 7;
+                                    });
+                                    $("#mn4").on("click", function () {
+                                        board.position(posiciones[8]);
+                                        indice = 8;
+                                    });
+                                </script> -->
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td id="mb5">d4</td>
+                                <td id="mn5">exd4</td>
+                                <!-- <script>
+                                    $("#mb5").on("click", function () {
+                                        board.position(posiciones[9]);
+                                        indice = 9;
+                                    });
+                                    $("#mn5").on("click", function () {
+                                        board.position(posiciones[10]);
+                                        indice = 10;
+                                    });
+                                </script> -->
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td id="mb6">cxd4</td>
+                                <td id="mn6">Ab4+</td>
+                                <!-- <script>
+                                    $("#mb6").on("click", function () {
+                                        board.position(posiciones[11]);
+                                        indice = 11;
+                                    });
+                                    $("#mn6").on("click", function () {
+                                        board.position(posiciones[12]);
+                                        indice = 12;
+                                    });
+                                </script> -->
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td id="mb7">Cc3</td>
+                                <td id="mn7">Cxe4</td>
+                                <!-- <script>
+                                    $("#mb7").on("click", function () {
+                                        board.position(posiciones[13]);
+                                        indice = 13;
+                                    });
+                                    $("#mn7").on("click", function () {
+                                        board.position(posiciones[14]);
+                                        indice = 14;
+                                    });
+                                </script> -->
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td id="mb8">O-O</td>
+                                <td>...</td>
+                                <!-- <script>
+                                    $("#mb8").on("click", function () {
+                                        board.position(posiciones[15]);
+                                        indice = 15;
+                                    });
+                                </script> -->
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    En la octava movida del Ataque Greco, se
+                                    efectúa la captura en c3 con el caballo, en
+                                    tanto que en esta línea se hace con el
+                                    alfil.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td>...</td>
+                                <td id="mn8">Axc3</td>
+                                <!-- <script>
+                                    $("#mn8").on("click", function () {
+                                        board.position(posiciones[16]);
+                                        indice = 16;
+                                    });
+                                </script> -->
+                            </tr>
+                            <tr>
+                                <th scope="row">9</th>
+                                <td id="mb9">d5!</td>
+                                <td>...</td>
+                                <!-- <script>
+                                    $("#mb9").on("click", function () {
+                                        board.position(posiciones[17]);
+                                        indice = 17;
+                                    });
+                                </script> -->
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Esta jugada constituye el citado Ataque
+                                    Möller, una movida evitando que el peón de
+                                    dama negro incomode al Alfil Italiano, lo
+                                    cual es factible ocupando ese mismo escaque,
+                                    a la vez que se ataca al caballo sito en c6.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9</th>
+                                <td>...</td>
+                                <td id="mn9">Af6</td>
+                                <!-- <script>
+                                    $("#mn9").on("click", function () {
+                                        board.position(posiciones[18]);
+                                        indice = 18;
+                                    });
+                                </script> -->
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td id="mb10">Te1</td>
+                                <td>...</td>
+                                <!-- <script>
+                                    $("#mb10").on("click", function () {
+                                        board.position(posiciones[19]);
+                                        indice = 19;
+                                    });
+                                </script> -->
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Con esta jugada, las blancas mantienen la
+                                    tensión del ataque mientras amenazan dos
+                                    piezas simultáneamente.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td>...</td>
+                                <td id="mn10">Ce7</td>
+                                <!-- <script>
+                                    $("#mn10").on("click", function () {
+                                        board.position(posiciones[20]);
+                                        indice = 20;
+                                    });
+                                </script> -->
+                            </tr>
+                            <tr>
+                                <th scope="row">11</th>
+                                <td id="mb11">Txe4</td>
+                                <td>...</td>
+                                <!-- <script>
+                                    $("#mb11").on("click", function () {
+                                        board.position(posiciones[21]);
+                                        indice = 21;
+                                    });
+                                </script> -->
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Alcanzada esta posición, dos grandes líneas
+                                    se abren, a saber: 11...d6 o 11... O-O.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-</body>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </body>
 </html>

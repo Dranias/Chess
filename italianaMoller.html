@@ -19,7 +19,25 @@
 <body>
     <div class="container">
         <div class="row">
-
+            <script>
+                var indice = 0;
+                let posiciones = ["rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+                              "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR", "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR",
+                              "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R", "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R",
+                              "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R", "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R", 
+                              "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R", "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R", 
+                              "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R", "r1bqk2r/pppp1ppp/2n2n2/2b5/2BpP3/2P2N2/PP3PPP/RNBQK2R", 
+                              "r1bqk2r/pppp1ppp/2n2n2/2b5/2BPP3/5N2/PP3PPP/RNBQK2R", "r1bqk2r/pppp1ppp/2n2n2/8/1bBPP3/5N2/PP3PPP/RNBQK2R", 
+                              "r1bqk2r/pppp1ppp/2n2n2/8/1bBPP3/2N2N2/PP3PPP/R1BQK2R", "r1bqk2r/pppp1ppp/2n5/8/1bBPn3/2N2N2/PP3PPP/R1BQK2R", 
+                              "r1bqk2r/pppp1ppp/2n5/8/1bBPn3/2N2N2/PP3PPP/R1BQ1RK1", "r1bqk2r/pppp1ppp/2n5/8/2BPn3/2b2N2/PP3PPP/R1BQ1RK1", 
+                              "r1bqk2r/pppp1ppp/2n5/3P4/2B1n3/2b2N2/PP3PPP/R1BQ1RK1", "r1bqk2r/pppp1ppp/2n2b2/3P4/2B1n3/5N2/PP3PPP/R1BQ1RK1", 
+                              "r1bqk2r/pppp1ppp/2n2b2/3P4/2B1n3/5N2/PP3PPP/R1BQR1K1", "r1bqk2r/ppppnppp/5b2/3P4/2B1n3/5N2/PP3PPP/R1BQR1K1", 
+                              "r1bqk2r/ppppnppp/5b2/3P4/2B1R3/5N2/PP3PPP/R1BQ2K1"
+                            ]
+                posiciones.forEach(function(elemento, indice, array) {
+                console.log(elemento, indice);
+})
+            </script>
             <!--Tablero-->
 
             <div class="col-8">
@@ -35,16 +53,37 @@
                 <div></div>
 
                 <div class="btn-group">
-                    <button id="initialPositionBtn" type="button" class="btn btn-primary">Inicio</button>
-                    <button type="button" class="btn btn-primary">Atras</button>
-                    <button type="button" class="btn btn-primary">Adelante</button>
+                    <button id="initialPositionBtn" type="button" class="btn btn-outline-secondary">Inicio</button>
+                    <button id="antMovimiento" type="button" class="btn btn-outline-primary">Atras</button>
+                    <button id="sigMovimiento" type="button" class="btn btn-outline-success">Adelante</button>
+                    <button id="flipOrientationBtn" type="button" class="btn btn-outline-dark">Girar Tablero</button>
                 </div>
 
                 <script>
                     function clickInitialPositionBtn () {
                         board.position('start')
+                        indice = 0;
                     }
                     $('#initialPositionBtn').on('click', clickInitialPositionBtn)
+
+                    function clicksigMovimiento () {
+                        if(indice<21){
+                            board.position(posiciones[indice+1])
+                            indice = indice + 1;
+                        }
+                        
+                    }
+                    $('#sigMovimiento').on('click', clicksigMovimiento)
+
+                    function clickantMovimiento () {
+                        if(indice>0){
+                            board.position(posiciones[indice-1])
+                            indice = indice - 1;
+                        }
+                    }
+                    $('#antMovimiento').on('click', clickantMovimiento)
+
+                    $('#flipOrientationBtn').on('click', board.flip)
                 </script>
             </div>
             
@@ -69,9 +108,11 @@
                             <script>
                                 $('#mb1').on('click', function () {
                                     board.position('rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR')
+                                    indice = 1;
                                 });
                                 $('#mn1').on('click', function () {
                                     board.position('rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR')
+                                    indice = 2;
                                 });
                             </script>
                         </tr>
@@ -82,9 +123,11 @@
                             <script>
                                 $('#mb2').on('click', function () {
                                     board.position('rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R')
+                                    indice = 3;
                                 });
                                 $('#mn2').on('click', function () {
                                     board.position('r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R')
+                                    indice = 4;
                                 });
                             </script>
                         </tr>
@@ -95,9 +138,11 @@
                             <script>
                                 $('#mb3').on('click', function () {
                                     board.position('r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R')
+                                    indice = 5;
                                 });
                                 $('#mn3').on('click', function () {
                                     board.position('r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R')
+                                    indice = 6;
                                 });
                             </script>
                         </tr>
@@ -112,9 +157,11 @@
                             <script>
                                 $('#mb4').on('click', function () {
                                     board.position('r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R')
+                                    indice = 7;
                                 });
                                 $('#mn4').on('click', function () {
                                     board.position('r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R')
+                                    indice = 8;
                                 });
                             </script>
                         </tr>
@@ -125,9 +172,11 @@
                             <script>
                                 $('#mb5').on('click', function () {
                                     board.position('r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R')
+                                    indice = 9;
                                 });
                                 $('#mn5').on('click', function () {
                                     board.position('r1bqk2r/pppp1ppp/2n2n2/2b5/2BpP3/2P2N2/PP3PPP/RNBQK2R')
+                                    indice = 10;
                                 });
                             </script>
                         </tr>
@@ -138,9 +187,11 @@
                             <script>
                                 $('#mb6').on('click', function () {
                                     board.position('r1bqk2r/pppp1ppp/2n2n2/2b5/2BPP3/5N2/PP3PPP/RNBQK2R')
+                                    indice = 11;
                                 });
                                 $('#mn6').on('click', function () {
                                     board.position('r1bqk2r/pppp1ppp/2n2n2/8/1bBPP3/5N2/PP3PPP/RNBQK2R')
+                                    indice = 12;
                                 });
                             </script>
                         </tr>
@@ -151,9 +202,11 @@
                             <script>
                                 $('#mb7').on('click', function () {
                                     board.position('r1bqk2r/pppp1ppp/2n2n2/8/1bBPP3/2N2N2/PP3PPP/R1BQK2R')
+                                    indice = 13;
                                 });
                                 $('#mn7').on('click', function () {
                                     board.position('r1bqk2r/pppp1ppp/2n5/8/1bBPn3/2N2N2/PP3PPP/R1BQK2R')
+                                    indice = 14;
                                 });
                             </script>
                         </tr>
@@ -164,6 +217,7 @@
                             <script>
                                 $('#mb8').on('click', function () {
                                     board.position('r1bqk2r/pppp1ppp/2n5/8/1bBPn3/2N2N2/PP3PPP/R1BQ1RK1')
+                                    indice = 15;
                                 });
                             </script>
                         </tr>
@@ -180,6 +234,7 @@
                             <script>
                                 $('#mn8').on('click', function () {
                                     board.position('r1bqk2r/pppp1ppp/2n5/8/2BPn3/2b2N2/PP3PPP/R1BQ1RK1')
+                                    indice = 16;
                                 });
                             </script>
                         </tr>
@@ -190,6 +245,7 @@
                             <script>
                                 $('#mb9').on('click', function () {
                                     board.position('r1bqk2r/pppp1ppp/2n5/3P4/2B1n3/2b2N2/PP3PPP/R1BQ1RK1')
+                                    indice = 17;
                                 });
                             </script>
                         </tr>
@@ -208,6 +264,7 @@
                             <script>
                                 $('#mn9').on('click', function () {
                                     board.position('r1bqk2r/pppp1ppp/2n2b2/3P4/2B1n3/5N2/PP3PPP/R1BQ1RK1')
+                                    indice = 18;
                                 });
                             </script>
                         </tr>
@@ -218,6 +275,7 @@
                             <script>
                                 $('#mb10').on('click', function () {
                                     board.position('r1bqk2r/pppp1ppp/2n2b2/3P4/2B1n3/5N2/PP3PPP/R1BQR1K1')
+                                    indice = 19;
                                 });
                             </script>
                         </tr>
@@ -234,6 +292,7 @@
                             <script>
                                 $('#mn10').on('click', function () {
                                     board.position('r1bqk2r/ppppnppp/5b2/3P4/2B1n3/5N2/PP3PPP/R1BQR1K1')
+                                    indice = 20;
                                 });
                             </script>
                         </tr>
@@ -244,6 +303,7 @@
                             <script>
                                 $('#mb11').on('click', function () {
                                     board.position('r1bqk2r/ppppnppp/5b2/3P4/2B1R3/5N2/PP3PPP/R1BQ2K1')
+                                    indice = 21;
                                 });
                             </script>
                         </tr>

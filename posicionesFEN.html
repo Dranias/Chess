@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chess</title>
+    <h1> Test </h1>
+    <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="js/chessboard-1.0.0.min.js"></script>
+    <script src="js/chess.js"></script>
+  </head>
+  <body>
+    <div id="myBoard" style="width: 400px"></div>
+    <button id="showPositionBtn">Show position in console</button>
+    <script>
+        var config = {
+          draggable: true,
+          position: 'start'
+        }
+        var board = Chessboard('myBoard', config)
+
+        function clickShowPositionBtn () {
+          console.log('Current position as an Object:')
+          console.log(board.position())
+          console.log('Current position as a FEN string:')
+          console.log(board.fen())
+        }
+        $('#showPositionBtn').on('click', clickShowPositionBtn)
+    </script>
+  </body>
+</html>

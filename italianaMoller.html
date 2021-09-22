@@ -107,11 +107,12 @@
                             <td id="mn1">e5</td>
                             <script>
                                 $('#mb1').on('click', function () {
-                                    board.position('rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR')
+                                    board.position(posiciones[1])
                                     indice = 1;
                                 });
                                 $('#mn1').on('click', function () {
-                                    board.position('rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR')
+                                    //board.position('rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR')
+                                    board.position(posiciones[2])
                                     indice = 2;
                                 });
                             </script>
@@ -122,11 +123,11 @@
                             <td id="mn2">Cc6</td>
                             <script>
                                 $('#mb2').on('click', function () {
-                                    board.position('rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R')
+                                    board.position(posiciones[3])
                                     indice = 3;
                                 });
                                 $('#mn2').on('click', function () {
-                                    board.position('r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R')
+                                    board.position(posiciones[4])
                                     indice = 4;
                                 });
                             </script>
@@ -137,11 +138,11 @@
                             <td id="mn3">Ac5</td>
                             <script>
                                 $('#mb3').on('click', function () {
-                                    board.position('r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R')
+                                    board.position(posiciones[5])
                                     indice = 5;
                                 });
                                 $('#mn3').on('click', function () {
-                                    board.position('r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R')
+                                    board.position(posiciones[6])
                                     indice = 6;
                                 });
                             </script>
@@ -156,11 +157,11 @@
                             <td id="mn4">Cc6</td>
                             <script>
                                 $('#mb4').on('click', function () {
-                                    board.position('r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R')
+                                    board.position(posiciones[7])
                                     indice = 7;
                                 });
                                 $('#mn4').on('click', function () {
-                                    board.position('r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R')
+                                    board.position(posiciones[8])
                                     indice = 8;
                                 });
                             </script>
@@ -171,11 +172,11 @@
                             <td id="mn5">exd4</td>
                             <script>
                                 $('#mb5').on('click', function () {
-                                    board.position('r1bqk2r/pppp1ppp/2n2n2/2b1p3/2BPP3/2P2N2/PP3PPP/RNBQK2R')
+                                    board.position(posiciones[9])
                                     indice = 9;
                                 });
                                 $('#mn5').on('click', function () {
-                                    board.position('r1bqk2r/pppp1ppp/2n2n2/2b5/2BpP3/2P2N2/PP3PPP/RNBQK2R')
+                                    board.position(posiciones[10])
                                     indice = 10;
                                 });
                             </script>
@@ -186,11 +187,11 @@
                             <td id="mn6">Ab4+</td>
                             <script>
                                 $('#mb6').on('click', function () {
-                                    board.position('r1bqk2r/pppp1ppp/2n2n2/2b5/2BPP3/5N2/PP3PPP/RNBQK2R')
+                                    board.position(posiciones[11])
                                     indice = 11;
                                 });
                                 $('#mn6').on('click', function () {
-                                    board.position('r1bqk2r/pppp1ppp/2n2n2/8/1bBPP3/5N2/PP3PPP/RNBQK2R')
+                                    board.position(posiciones[12])
                                     indice = 12;
                                 });
                             </script>
@@ -201,11 +202,11 @@
                             <td id="mn7">Cxe4</td>
                             <script>
                                 $('#mb7').on('click', function () {
-                                    board.position('r1bqk2r/pppp1ppp/2n2n2/8/1bBPP3/2N2N2/PP3PPP/R1BQK2R')
+                                    board.position(posiciones[13])
                                     indice = 13;
                                 });
                                 $('#mn7').on('click', function () {
-                                    board.position('r1bqk2r/pppp1ppp/2n5/8/1bBPn3/2N2N2/PP3PPP/R1BQK2R')
+                                    board.position(posiciones[14])
                                     indice = 14;
                                 });
                             </script>
@@ -216,7 +217,7 @@
                             <td>...</td>
                             <script>
                                 $('#mb8').on('click', function () {
-                                    board.position('r1bqk2r/pppp1ppp/2n5/8/1bBPn3/2N2N2/PP3PPP/R1BQ1RK1')
+                                    board.position(posiciones[15])
                                     indice = 15;
                                 });
                             </script>
@@ -233,7 +234,7 @@
                             <td id="mn8">Axc3</td>
                             <script>
                                 $('#mn8').on('click', function () {
-                                    board.position('r1bqk2r/pppp1ppp/2n5/8/2BPn3/2b2N2/PP3PPP/R1BQ1RK1')
+                                    board.position(posiciones[16])
                                     indice = 16;
                                 });
                             </script>
@@ -244,7 +245,7 @@
                             <td>...</td>
                             <script>
                                 $('#mb9').on('click', function () {
-                                    board.position('r1bqk2r/pppp1ppp/2n5/3P4/2B1n3/2b2N2/PP3PPP/R1BQ1RK1')
+                                    board.position(posiciones[17])
                                     indice = 17;
                                 });
                             </script>
@@ -263,7 +264,7 @@
                             <td id="mn9">Af6</td>
                             <script>
                                 $('#mn9').on('click', function () {
-                                    board.position('r1bqk2r/pppp1ppp/2n2b2/3P4/2B1n3/5N2/PP3PPP/R1BQ1RK1')
+                                    board.position(posiciones[18])
                                     indice = 18;
                                 });
                             </script>
@@ -274,7 +275,7 @@
                             <td>...</td>
                             <script>
                                 $('#mb10').on('click', function () {
-                                    board.position('r1bqk2r/pppp1ppp/2n2b2/3P4/2B1n3/5N2/PP3PPP/R1BQR1K1')
+                                    board.position(posiciones[19])
                                     indice = 19;
                                 });
                             </script>
@@ -291,7 +292,7 @@
                             <td id="mn10">Ce7</td>
                             <script>
                                 $('#mn10').on('click', function () {
-                                    board.position('r1bqk2r/ppppnppp/5b2/3P4/2B1n3/5N2/PP3PPP/R1BQR1K1')
+                                    board.position(posiciones[20])
                                     indice = 20;
                                 });
                             </script>
@@ -302,7 +303,7 @@
                             <td>...</td>
                             <script>
                                 $('#mb11').on('click', function () {
-                                    board.position('r1bqk2r/ppppnppp/5b2/3P4/2B1R3/5N2/PP3PPP/R1BQ2K1')
+                                    board.position(posiciones[21])
                                     indice = 21;
                                 });
                             </script>

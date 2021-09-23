@@ -10,15 +10,15 @@
         />
 
         <!-- Estilos -->
-        <link rel="stylesheet" href="../../css/clase.css" />
+        <link rel="stylesheet" href="css/clase.css" />
 
-        <title>Chess</title>
+        <title>Apertura Italiana</title>
 
-        <h1>Apertura Italiana: Ataque Moller</h1>
+        <h1>Giuoco Piano</h1>
         <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script src="js/chessboard-1.0.0.min.js"></script>
-        <script src="js/chess.js"></script>
+        <script src="js/giuocoPiano.js"></script>
     </head>
     <body>
         <div class="container">
@@ -58,6 +58,15 @@
                             Girar Tablero
                         </button>
                     </div>
+                    <div class="p-3 mb-2 bg-secondary text-white">
+                        El Giuoco Piano, juego lento en italiano, (ECO C50, C53-C54) es la línea principal de la 
+                        Apertura italiana.
+                        <br>Es una apertura fantástica, pues respeta los tres pilares de la estrategia de apertura. 
+                        <br> 1. Controlar el centro - Comenzar con 1.e4 controla el centro y abre las diagonales para el alfil y la dama.
+                        <br> 2. Desarrollar las piezas - Las blancas desarrollan rápidamente las piezas del flanco de rey a sus mejores casillas. 
+                        <br> 3. Proteger al rey - En el cuarto movimiento, las blancas ya están listas para enrocar.
+                    </div>
+                    
                 </div>
 
                 <!--Posiciones table-wrapper-scroll-y my-custom-scrollbar -->
@@ -84,9 +93,6 @@
                                 <th scope="row">1</th>
                                 <td id="mb1">e4</td>
                                 <td id="mn1" click="mifuncion(i)">e5</td>
-                                <script>
-
-                                </script>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
@@ -96,7 +102,7 @@
                             <tr>
                                 <th scope="row">3</th>
                                 <td id="mb3">Ac4</td>
-                                <td id="mn3">Ac5</td>
+                                <td >...</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -105,92 +111,84 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th scope="row">4</th>
-                                <td id="mb4">c3</td>
-                                <td id="mn4">Cc6</td>
+                                <th scope="row">3</th>
+                                <td>...</td>
+                                <td id="mn3">Ac5</td>
                             </tr>
                             <tr>
-                                <th scope="row">5</th>
-                                <td id="mb5">d4</td>
-                                <td id="mn5">exd4</td>
+                                <td></td>
+                                <td colspan="2">
+                                    Giuoco Piano. Sus ideas estratégicas son claras: ataque al punto f7, el único que sólo está defendido 
+                                    por el rey, centro abierto y control de la diagonal a2-g8. Por su parte las negras tratan 
+                                    de hacer lo mismo atacando en punto f2, y procurando hacer la jugada d5 y atacar el alfil de c4 lo antes posible.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td id="mb4">c3</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Línea principal
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td id="mb5">d3</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Giuoco Pianissimo
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td id="mb6">b4</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Gambito Evans
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td id="mb7">Cc3</td>
+                                <td id="mb8">Cf6</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Variante cuatro caballos
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">6</th>
-                                <td id="mb6">cxd4</td>
-                                <td id="mn6">Ab4+</td>
+                                <td id="mb9">b4</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Variante Blackburne-Bird después de 4. d3 Nf6
+                                    5. c3 d6
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">7</th>
-                                <td id="mb7">Cc3</td>
-                                <td id="mn7">Cxe4</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">8</th>
-                                <td id="mb8">O-O</td>
+                                <td id="mb10">Cc3</td>
                                 <td>...</td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td colspan="2">
-                                    En la octava movida del Ataque Greco, se
-                                    efectúa la captura en c3 con el caballo, en
-                                    tanto que en esta línea se hace con el
-                                    alfil.
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">8</th>
-                                <td>...</td>
-                                <td id="mn8">Axc3</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">9</th>
-                                <td id="mb9">d5!</td>
-                                <td>...</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td colspan="2">
-                                    Esta jugada constituye el citado Ataque
-                                    Möller, una movida evitando que el peón de
-                                    dama negro incomode al Alfil Italiano, lo
-                                    cual es factible ocupando ese mismo escaque,
-                                    a la vez que se ataca al caballo sito en c6.
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">9</th>
-                                <td>...</td>
-                                <td id="mn9">Af6</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">10</th>
-                                <td id="mb10">Te1</td>
-                                <td>...</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td colspan="2">
-                                    Con esta jugada, las blancas mantienen la
-                                    tensión del ataque mientras amenazan dos
-                                    piezas simultáneamente.
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">10</th>
-                                <td>...</td>
-                                <td id="mn10">Ce7</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">11</th>
-                                <td id="mb11">Txe4</td>
-                                <td>...</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td colspan="2">
-                                    Alcanzada esta posición, dos grandes líneas
-                                    se abren, a saber: 11...d6 o 11... O-O.
+                                    Ataque Greco tras
+                                    4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+
                                 </td>
                             </tr>
                         </tbody>

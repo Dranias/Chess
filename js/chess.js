@@ -72,6 +72,7 @@ $(document).ready(function () {
 
     var moves = 1;
     var table = document.querySelector("#table");
+    
     table.querySelectorAll("td").forEach(function (b) {
         if (b.id) {
             b.setAttribute("move", moves);

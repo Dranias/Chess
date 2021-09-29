@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- CSS BOOSTRAP -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+
+        <!-- Estilos -->
+        <link rel="stylesheet" href="css/clase.css" />
+
+        <title>Algunos Mates Simples - JRC</title>
+
+        <h1>Ejemplo 2: Mate de torre y rey contra rey.</h1>
+        <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="js/chessboard-1.0.0.min.js"></script>
+        <script src="js/matesejemplo2.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <!--Tablero-->
+
+                <div class="col-8">
+                    <div id="myBoard" style="width: 90%"></div>
+
+                    <div class="btn-group mt-3" style="width: 90%">
+                        <button
+                            id="initialPositionBtn"
+                            type="button"
+                            class="btn btn-outline-secondary"
+                        >
+                            Inicio
+                        </button>
+                        <button
+                            id="antMovimiento"
+                            type="button"
+                            class="btn btn-outline-primary"
+                        >
+                            Atras
+                        </button>
+                        <button
+                            id="sigMovimiento"
+                            type="button"
+                            class="btn btn-outline-success"
+                        >
+                            Adelante
+                        </button>
+                        <button
+                            id="flipOrientationBtn"
+                            type="button"
+                            class="btn btn-outline-dark"
+                        >
+                            Girar Tablero
+                        </button>
+                    </div>
+                    <div class="p-3 mb-2 bg-secondary text-white">
+                        Fundamentos del Ajedrez de José Raúl Capablanca
+                        <br>Primera Parte
+                        <br>Capítulo I Primeras nociones: finales, medio juego y aperturas
+                        <br>1. Algunos mates simples
+                        <br>Ejemplo 2. Mate de torre y rey contra rey.
+                        
+                    </div>
+                    
+                </div>
+
+                <!--Posiciones table-wrapper-scroll-y my-custom-scrollbar -->
+
+                <div class="col-4 overflow-auto" style="height: 70vh">
+                    <table
+                        id="table"
+                        class="
+                            table table-sm table-bordered table-dark table-hover
+                        "
+                        data-toggle="table"
+                        data-url="/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/"
+                        data-show-columns="true"
+                    >
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Blancas</th>
+                                <th scope="col">Negras</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td id="mb1">Re2</td>
+                                <td id="mn1" click="mifuncion(i)">Rd5</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td id="mb2">Re3</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    No habiendo la torre aún entrado en juego, 
+                                    lo mejor es avanzar con el rey hacia el centro del tablero, 
+                                    y no frente al adversario, sino a un costado del mismo, 
+                                    de modo que si ahora el rey negro juega a e5, 
+                                    la torre lo hará retroceder mediante Th5+.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>...</td>
+                                <td id="mn2">Rc4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td id="mb3">Th5</td>
+                                <td id="mn3">Rc3</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td id="mb4">Th4</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Recluyendo al monarca adversario a la menor 
+                                    cantidad de escaques que pueda tener a su disposición.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>...</td>
+                                <td id="mn4">Rc2</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td id="mb5">Tc4+</td>
+                                <td id="mn5">Rb3</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td id="mb6">Rd3</td>
+                                <td id="mn6">Rb2</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td id="mb7">Tb4+</td>
+                                <td id="mn7">Ra3</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td id="mb8">Rc3</td>
+                                <td id="mn8">Ra2</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Aquí deberíamos observar que a menudo el rey blanco se ha movido al lado de la torre, 
+                                    con el propósito no sólo de apoyarla, sino también de reducir la movilidad del rey oponente. 
+                                    En esta posición las blancas obtienen el mate en tres jugadas:
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9</th>
+                                <td id="mb9">Ta4+</td>
+                                <td id="mn9">Rb1</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td id="mb10">Ta8</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    (10.Ta7; 10.Ta6; 10.Ta5; 10.Ta3)
+                                    <br>La Torre juega a cualquier casilla en la columna a, 
+                                    forzando al rey negro a colocarse en Rc1, 
+                                    es decir frente al rey blanco, y, entonces,
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td>...</td>
+                                <td id="mn10">Rc1</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">11</th>
+                                <td id="mb11">Ta1#</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Han sido necesarias once movidas para la obtención del mate, 
+                                    y creo que podría conseguirse este resultado, 
+                                    cualquiera fuera la posición que se presente, en menos de veinte. 
+                                    Aunque resulte una tarea monótona, 
+                                    es muy conveniente para el iniciado practicar muchas veces estas posiciones, 
+                                    hasta conseguir dominarlas sin esfuerzo.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- CSS BOOSTRAP -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+
+        <!-- Estilos -->
+        <link rel="stylesheet" href="css/clase.css" />
+
+        <title>Evans Rehusado</title>
+
+        <h1>Evans Rehusado</h1>
+        <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="js/chessboard-1.0.0.min.js"></script>
+        <script src="js/evansRehusado.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <!--Tablero-->
+
+                <div class="col-8">
+                    <div id="myBoard" style="width: 90%"></div>
+
+                    <div class="btn-group mt-3" style="width: 90%">
+                        <button
+                            id="initialPositionBtn"
+                            type="button"
+                            class="btn btn-outline-secondary"
+                        >
+                            Inicio
+                        </button>
+                        <button
+                            id="antMovimiento"
+                            type="button"
+                            class="btn btn-outline-primary"
+                        >
+                            Atras
+                        </button>
+                        <button
+                            id="sigMovimiento"
+                            type="button"
+                            class="btn btn-outline-success"
+                        >
+                            Adelante
+                        </button>
+                        <button
+                            id="flipOrientationBtn"
+                            type="button"
+                            class="btn btn-outline-dark"
+                        >
+                            Girar Tablero
+                        </button>
+                    </div>
+                    <div class="p-3 mb-2 bg-secondary text-white">
+                        Como todo gambito su idea central consiste en la ganancia de 
+                        tiempos a cambio del material sacrificado.
+                    </div>
+                    
+                </div>
+
+                <!--Posiciones table-wrapper-scroll-y my-custom-scrollbar -->
+
+                <div class="col-4 overflow-auto" style="height: 70vh">
+                    <table
+                        id="table"
+                        class="
+                            table table-sm table-bordered table-dark table-hover
+                        "
+                        data-toggle="table"
+                        data-url="/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/"
+                        data-show-columns="true"
+                    >
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Blancas</th>
+                                <th scope="col">Negras</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td id="mb1">e4</td>
+                                <td id="mn1" click="mifuncion(i)">e5</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td id="mb2">Cf3</td>
+                                <td id="mn2">Cc6</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td id="mb3">Ac4</td>
+                                <td >...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Posición de la Apertura Italiana.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>...</td>
+                                <td id="mn3">Ac5</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td id="mb4">b4</td>
+                                <td >...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Gambito Evans. Al  ofrecer el sacrificio del peón las blancas están desviando 
+                                    la acción del alfil de casillas negras ubicado adecuadamente en c5. 
+                                    La intención es asegurar la ocupación del centro con sus peones y apuntar, casi con obsesión,
+                                    hacia el punto más débil de las negras, la casilla f7.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>...</td>
+                                <td id="mn4">Ab6</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Gamito declinado.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </body>
+</html>

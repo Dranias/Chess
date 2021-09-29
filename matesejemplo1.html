@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- CSS BOOSTRAP -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+
+        <!-- Estilos -->
+        <link rel="stylesheet" href="css/clase.css" />
+
+        <title>Algunos Mates Simples - JRC</title>
+
+        <h1>Ejemplo 1: Mate de torre y rey contra rey.</h1>
+        <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="js/chessboard-1.0.0.min.js"></script>
+        <script src="js/matesejemplo1.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <!--Tablero-->
+
+                <div class="col-8">
+                    <div id="myBoard" style="width: 90%"></div>
+
+                    <div class="btn-group mt-3" style="width: 90%">
+                        <button
+                            id="initialPositionBtn"
+                            type="button"
+                            class="btn btn-outline-secondary"
+                        >
+                            Inicio
+                        </button>
+                        <button
+                            id="antMovimiento"
+                            type="button"
+                            class="btn btn-outline-primary"
+                        >
+                            Atras
+                        </button>
+                        <button
+                            id="sigMovimiento"
+                            type="button"
+                            class="btn btn-outline-success"
+                        >
+                            Adelante
+                        </button>
+                        <button
+                            id="flipOrientationBtn"
+                            type="button"
+                            class="btn btn-outline-dark"
+                        >
+                            Girar Tablero
+                        </button>
+                    </div>
+                    <div class="p-3 mb-2 bg-secondary text-white">
+                        Fundamentos del Ajedrez de José Raúl Capablanca
+                        <br>Primera Parte
+                        <br>Capítulo I Primeras nociones: finales, medio juego y aperturas
+                        <br>1. Algunos mates simples
+                        <br>Ejemplo 1. Mate de torre y rey contra rey.
+                        
+                    </div>
+                    
+                </div>
+
+                <!--Posiciones table-wrapper-scroll-y my-custom-scrollbar -->
+
+                <div class="col-4 overflow-auto" style="height: 70vh">
+                    <table
+                        id="table"
+                        class="
+                            table table-sm table-bordered table-dark table-hover
+                        "
+                        data-toggle="table"
+                        data-url="/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/"
+                        data-show-columns="true"
+                    >
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Blancas</th>
+                                <th scope="col">Negras</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td id="mb1">Ta7</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    En esta posición el poder de la torre queda demostrado
+                                    ya que de inmediato recluye al monarca adversario a la última fila, 
+                                    y entonces el mate se obtiene con toda rapidez, por medio de:
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>...</td>
+                                <td id="mn1" click="mifuncion(i)">Rg8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td id="mb2">Rg2</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    La acción combinada del rey y la torre es necesaria para obtener una posición 
+                                    en la cual pueda forzarse el mate. La regla general que debe observarse es la 
+                                    siguiente: Conservar el rey todo lo posible, en la misma fila o, como sucede 
+                                    en el ejemplo que estamos examinando, en la misma columna que el monarca 
+                                    adversario. 
+                                    Como en nuestro caso el rey conseguirá llegar a la sexta fila, 
+                                    lo mejor es colocarlo en la columna más cercana y hacia el centro.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>...</td>
+                                <td id="mn2">Rf8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td id="mb3">Rf3</td>
+                                <td id="mn3">Re8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td id="mb4">Re4</td>
+                                <td id="mn4">Rd8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td id="mb5">Rd5</td>
+                                <td id="mn5">Rc8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td id="mb6">Rd6</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Y no 6.Rc6, en razón de que en tal caso el rey negro volvería a d8 y se dilataría la obtención del mate. 
+                                    Si ahora el rey se mueve a d8, Ta8 da mate en seguida.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>...</td>
+                                <td id="mn6">Rb8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td id="mb7">Tc7</td>
+                                <td id="mn7">Ra8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td id="mb8">Rc6</td>
+                                <td id="mn8">Rb8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9</th>
+                                <td id="mb9">Rb6</td>
+                                <td id="mn9">Ra8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td id="mb9">Tc8#</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </body>
+</html>

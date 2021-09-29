@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- CSS BOOSTRAP -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+
+        <!-- Estilos -->
+        <link rel="stylesheet" href="css/clase.css" />
+
+        <title>Gambito de Dama Declinado</title>
+
+        <h1>Giuoco Piano</h1>
+        <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="js/chessboard-1.0.0.min.js"></script>
+        <script src="js/damaDeclinado.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <!--Tablero-->
+
+                <div class="col-8">
+                    <div id="myBoard" style="width: 90%"></div>
+
+                    <div class="btn-group mt-3" style="width: 90%">
+                        <button
+                            id="initialPositionBtn"
+                            type="button"
+                            class="btn btn-outline-secondary"
+                        >
+                            Inicio
+                        </button>
+                        <button
+                            id="antMovimiento"
+                            type="button"
+                            class="btn btn-outline-primary"
+                        >
+                            Atras
+                        </button>
+                        <button
+                            id="sigMovimiento"
+                            type="button"
+                            class="btn btn-outline-success"
+                        >
+                            Adelante
+                        </button>
+                        <button
+                            id="flipOrientationBtn"
+                            type="button"
+                            class="btn btn-outline-dark"
+                        >
+                            Girar Tablero
+                        </button>
+                    </div>
+                    <div class="p-3 mb-2 bg-secondary text-white">
+                        Al declinar el sacrificio de peón propuesto por las blancas, se tiene el fin de
+                        luchar por el control del centro.
+                        Existen multiples formas para declinar el gambito, de las cuales mostramos algunos ejemplos.
+                    </div>
+                    
+                </div>
+
+                <!--Posiciones table-wrapper-scroll-y my-custom-scrollbar -->
+
+                <div class="col-4 overflow-auto" style="height: 70vh">
+                    <table
+                        id="table"
+                        class="
+                            table table-sm table-bordered table-dark table-hover
+                        "
+                        data-toggle="table"
+                        data-url="/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/"
+                        data-show-columns="true"
+                    >
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Blancas</th>
+                                <th scope="col">Negras</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td id="mb1">d4</td>
+                                <td id="mn1" click="mifuncion(i)">d5</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td id="mb2">c4</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Gambito de Dama
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>...</td>
+                                <td id="mn2">e6</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Defensa Ortodoxa
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>...</td>
+                                <td id="mn3">c5</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Defensa Simétrica
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>...</td>
+                                <td id="mn4">c6</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Defensa Eslava
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>...</td>
+                                <td id="mn5">Cc6</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Defensa Chigorin
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>...</td>
+                                <td id="mn6">e5</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Contragambito Albín
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>...</td>
+                                <td id="mn7">Af5</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Defensa Báltica
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>...</td>
+                                <td id="mn7">Cf6</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Defensa Marshal
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </body>
+</html>

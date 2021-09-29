@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- CSS BOOSTRAP -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+
+        <!-- Estilos -->
+        <link rel="stylesheet" href="css/clase.css" />
+
+        <title>Algunos Mates Simples - JRC</title>
+
+        <h1>Ejemplo 3: Mate de rey y dos alfiles contra rey</h1>
+        <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="js/chessboard-1.0.0.min.js"></script>
+        <script src="js/matesejemplo3.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <!--Tablero-->
+
+                <div class="col-8">
+                    <div id="myBoard" style="width: 90%"></div>
+
+                    <div class="btn-group mt-3" style="width: 90%">
+                        <button
+                            id="initialPositionBtn"
+                            type="button"
+                            class="btn btn-outline-secondary"
+                        >
+                            Inicio
+                        </button>
+                        <button
+                            id="antMovimiento"
+                            type="button"
+                            class="btn btn-outline-primary"
+                        >
+                            Atras
+                        </button>
+                        <button
+                            id="sigMovimiento"
+                            type="button"
+                            class="btn btn-outline-success"
+                        >
+                            Adelante
+                        </button>
+                        <button
+                            id="flipOrientationBtn"
+                            type="button"
+                            class="btn btn-outline-dark"
+                        >
+                            Girar Tablero
+                        </button>
+                    </div>
+                    <div class="p-3 mb-2 bg-secondary text-white">
+                        Fundamentos del Ajedrez de José Raúl Capablanca
+                        <br>Primera Parte
+                        <br>Capítulo I Primeras nociones: finales, medio juego y aperturas
+                        <br>1. Algunos mates simples
+                        <br>Ejemplo 3. Mate de rey y dos alfiles contra rey.
+                        
+                    </div>
+                    
+                </div>
+
+                <!--Posiciones table-wrapper-scroll-y my-custom-scrollbar -->
+
+                <div class="col-4 overflow-auto" style="height: 70vh">
+                    <table
+                        id="table"
+                        class="
+                            table table-sm table-bordered table-dark table-hover
+                        "
+                        data-toggle="table"
+                        data-url="/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/"
+                        data-show-columns="true"
+                    >
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Blancas</th>
+                                <th scope="col">Negras</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td id="mb1">Ad3</td>
+                                <td id="mn1" click="mifuncion(i)">Rg7</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td id="mb2">Ag5</td>
+                                <td id="mn2">Rf7</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td id="mb3">Af5</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Tenemos que al adversario le restan pocas casillas a su disposición. 
+                                    Si el monarca negro, en la posición original, 
+                                    se hallara situado en el centro del tablero, o en alguna casilla que no fuera angular, 
+                                    las blancas deben avanzar su rey y luego, con ayuda de los alfiles, 
+                                    limitar sus movimientos al menor número de escaques posible.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>...</td>
+                                <td id="mn3">Rg7</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td id="mb4">Rf2</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    En este final el rey negro no sólo debe ser llevado hasta el borde del tablero,
+                                    sino, además, reducido a una casilla angular y, antes que pueda darse mate,
+                                    debe colocarse el rey blanco en la sexta fila, y al propio tiempo, 
+                                    en una de las dos columnas finales del tablero. De manera que el monarca 
+                                    blanco debe avanzar hasta colocarse en las casillas h6, a6, g6, b6, f7, c7, f8 o c8, 
+                                    puesto que tal colocación es la más próxima, siguiendo lo establecido en la regla enunciada.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>...</td>
+                                <td id="mn4">Rf7</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td id="mb5">Rg3</td>
+                                <td id="mn5">Rg7</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td id="mb6">Rh4</td>
+                                <td id="mn6">Rf7</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td id="mb7">Rh5</td>
+                                <td id="mn7">Rg7</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td id="mb8">Ag6</td>
+                                <td id="mn8">Rg8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9</th>
+                                <td id="mb9">Rh6</td>
+                                <td id="mn9">Rf8</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Las blancas deben ahora ganar tiempo moviendo uno de sus alfiles, 
+                                    de tal modo que obliguen al rey negro a retroceder.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td id="mb10">Ah5</td>
+                                <td id="mn10">Rg8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">11</th>
+                                <td id="mb11">Ae7</td>
+                                <td id="mn11">Rh8</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    En este momento el alfil que corre por casillas blancas tiene que ser colocado
+                                    en una posición que lo habilite a dar jaque en el golpe siguiente, 
+                                    a lo largo de la diagonal de su color, al mover el oponente a g8.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">12</th>
+                                <td id="mb12">Ag4</td>
+                                <td id="mn12">Rg8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">13</th>
+                                <td id="mb13">Ae6+</td>
+                                <td id="mn13">Rh8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">14</th>
+                                <td id="mb14">Af6#</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Han sido precisos catorce movimientos para poder obtener una posición de mate, 
+                                    y estimo que, en cualquier posición que pudiera presentarse, 
+                                    este resultado debe ser alcanzado en un número menor de treinta. 
+                                    En todos los finales de este tipo debe tenerse sumo cuidado en no llegar 
+                                    a una posición de "ahogado", que haría tablas el cotejo y, por consiguiente, 
+                                    esfumaría la obtención de la victoria. 
+                                    <br>En este caso particular hay que recordar que el rey adversario, 
+                                    no sólo tiene que ser recluido al borde del tablero, sino que, al propio tiempo, 
+                                    a uno de los ángulos del campo de lucha. No obstante, 
+                                    en todos estos finales no tiene mayor importancia que el rey negro sea forzado a
+                                    retirarse a la última fila o a la última columna del tablero. Por ejemplo, 
+                                    tanto valdría obligarlo a colocarse en las casillas h5, a4, e1 o d8.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </body>
+</html>

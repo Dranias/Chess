@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- CSS BOOSTRAP -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+
+        <!-- Estilos -->
+        <link rel="stylesheet" href="css/clase.css" />
+
+        <title>Cononación del Peón - JRC</title>
+
+        <h1>Ejemplo 5: </h1>
+        <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="js/chessboard-1.0.0.min.js"></script>
+        <script src="js/coronarjemplo5.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <!--Tablero-->
+
+                <div class="col-8">
+                    <div id="myBoard" style="width: 90%"></div>
+
+                    <div class="btn-group mt-3" style="width: 90%">
+                        <button
+                            id="initialPositionBtn"
+                            type="button"
+                            class="btn btn-outline-secondary"
+                        >
+                            Inicio
+                        </button>
+                        <button
+                            id="antMovimiento"
+                            type="button"
+                            class="btn btn-outline-primary"
+                        >
+                            Atras
+                        </button>
+                        <button
+                            id="sigMovimiento"
+                            type="button"
+                            class="btn btn-outline-success"
+                        >
+                            Adelante
+                        </button>
+                        <button
+                            id="flipOrientationBtn"
+                            type="button"
+                            class="btn btn-outline-dark"
+                        >
+                            Girar Tablero
+                        </button>
+                    </div>
+                    <div class="p-3 mb-2 bg-secondary text-white">
+                        Fundamentos del Ajedrez de José Raúl Capablanca
+                        <br>Primera Parte
+                        <br>  Capítulo I Primeras nociones: finales, medio juego y aperturas
+                        <br>2. Coronación del peón
+                        <br>Ejemplo 5.
+                        
+                    </div>
+                    
+                </div>
+
+                <!--Posiciones table-wrapper-scroll-y my-custom-scrollbar -->
+
+                <div class="col-4 overflow-auto" style="height: 70vh">
+                    <table
+                        id="table"
+                        class="
+                            table table-sm table-bordered table-dark table-hover
+                        "
+                        data-toggle="table"
+                        data-url="/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/"
+                        data-show-columns="true"
+                    >
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Blancas</th>
+                                <th scope="col">Negras</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    La ganancia de un peón es la más pequeña ventaja material que puede obtenerse en una partida,
+                                    y, a menudo, resulta suficiente para dar el triunfo, aunque sea el único material que reste en el tablero, aparte de los reyes. Resulta esencial, hablando en términos generales, que el rey se encuentre ubicado frente a su peón y con una casilla, por lo menos, que lo separe del mismo.
+                                    Si el rey contrario se halla directamente enfrente del peón, la partida no podrá ganarse.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td id="mb1">e3</td>
+                                <td id="mn1" click="mifuncion(i)">Re5</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td id="mb2">Rd3</td>
+                                <td id="mn2">Rd5</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Esta es una movida muy importante. 
+                                    Cualquiera otra hubiera acarreado la pérdida del cotejo, como lo demostraremos más tarde. 
+                                    Dado que el rey negro no puede ubicarse sobre el peón se colocará frente al rey adversario 
+                                    y todo lo posible en sus cercanías.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td id="mb3">e4+</td>
+                                <td id="mn3">Re5</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td id="mb4">Re3</td>
+                                <td id="mn4">Re6</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td id="mb5">Rf4</td>
+                                <td id="mn5">Rf6</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Otra vez nos encontramos en el mismo caso. A cada avance del monarca blanco, 
+                                    el de las negras será colocado frente al mismo, ya que no puede ir sobre el peón adversario.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td id="mb6">e5+</td>
+                                <td id="mn6">Re6</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td id="mb7">Re4</td>
+                                <td id="mn7">Re7</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td id="mb8">Rd5</td>
+                                <td id="mn8">Rd7</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9</th>
+                                <td id="mb9">e6+</td>
+                                <td id="mn9">Re7</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td id="mb10">Re5</td>
+                                <td id="mn10">Re8</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">11</th>
+                                <td id="mb11">Rd6</td>
+                                <td id="mn11">Rd8</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Si ahora las blancas avanzan su peón, el rey negro se colocará a su frente, 
+                                    consiguiendo de tal forma, ganar el peón o que el rey blanco mueva Re6, 
+                                    de lo que resultaría una partida tablas por "ahogado". 
+                                    Si en lugar de ello las blancas retroceden con su monarca, 
+                                    entonces podrá el rey negro colocarse frente al peón y, 
+                                    cuando se encuentre obligado a retroceder, se colocará de nuevo frente al peón, 
+                                    lo cual lo habilitará para ubicarse otra vez frente al mismo o al rey blanco, si avanzara, 
+                                    como anteriormente.
+                                    Esta forma de proceder es de suma importancia y el aficionado debe llegar a dominar por completo 
+                                    todos sus detalles, porque llevan en sí principios que serán aplicados más adelante y asimismo,
+                                    a causa de que muchos jugadores han perdido sus partidas en posiciones idénticas, por ignorarlos. 
+                                    A esta altura no puedo insistir demasiado en ellos, no obstante su trascendencia.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td id="mb7">Re4</td>
+                                <td id="mn7">Re7</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </body>
+</html>

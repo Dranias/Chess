@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- CSS BOOSTRAP -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+
+        <!-- Estilos -->
+        <link rel="stylesheet" href="css/clase.css" />
+
+        <title>Apertura Española</title>
+
+        <h1>Apertura Española o Ruy López</h1>
+        <link rel="stylesheet" href="css/chessboard-1.0.0.min.css" />
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="js/chessboard-1.0.0.min.js"></script>
+        <script src="js/ruyLopez.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <!--Tablero-->
+
+                <div class="col-8">
+                    <div id="myBoard" style="width: 90%"></div>
+
+                    <div class="btn-group mt-3" style="width: 90%">
+                        <button
+                            id="initialPositionBtn"
+                            type="button"
+                            class="btn btn-outline-secondary"
+                        >
+                            Inicio
+                        </button>
+                        <button
+                            id="antMovimiento"
+                            type="button"
+                            class="btn btn-outline-primary"
+                        >
+                            Atras
+                        </button>
+                        <button
+                            id="sigMovimiento"
+                            type="button"
+                            class="btn btn-outline-success"
+                        >
+                            Adelante
+                        </button>
+                        <button
+                            id="flipOrientationBtn"
+                            type="button"
+                            class="btn btn-outline-dark"
+                        >
+                            Girar Tablero
+                        </button>
+                    </div>
+                    <div class="p-3 mb-2 bg-secondary text-white">  
+                        Es una apertura abierta y se la conoce como apertura Ruy López, 
+                        debido a que fue el ajedrecista español Ruy López de Segura quien la popularizó en el siglo XVI.
+                        Surge tras los siguientes movimientos: 1.e4 e5 2.Cf3 Cc6 3.Ab5
+                        <br>
+                        <br>Es una apertura fantástica, pues respeta los tres pilares de la estrategia de apertura. 
+                        <br> Tras 1.e4 e5 2.Cf3 Cc6 3.Ab5 no solo desarrolla una pieza, sino que se ataca a la única pieza desarrollada 
+                        del negro, la única que controla el centro, con lo que a pesar de que en b5 el alfil no controla directamente el centro, 
+                        sí lo controla indirectamente.
+                        <br> 2. Si se entra en la línea principal, con 3.... a6 el negro se ve obligado a debilitar el flanco de dama. 
+                        <br> 3.En la Apertura española no hay defensa que asegure a las negras igualdad, pero tampoco hay variante que asegure a las blancas la victoria. Se termina en partidas desequilibradas en las que la pericia del jugador es esencial para ganar
+                    </div>
+                    
+                </div>
+
+                <!--Posiciones table-wrapper-scroll-y my-custom-scrollbar -->
+
+                <div class="col-4 overflow-auto" style="height: 70vh">
+                    <table
+                        id="table"
+                        class="
+                            table table-sm table-bordered table-dark table-hover
+                        "
+                        data-toggle="table"
+                        data-url="/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/"
+                        data-show-columns="true"
+                    >
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Blancas</th>
+                                <th scope="col">Negras</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td id="mb1">e4</td>
+                                <td id="mn1" click="mifuncion(i)">e5</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td id="mb2">Cf3</td>
+                                <td id="mn2">Cc6</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td id="mb3">Ab5</td>
+                                <td >...</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    En principio planea tomar control del centro, amenazando con capturar al caballo negro, 
+                                    pieza fundamental que defiende al peón de e5 y también la casilla d4 (a donde iría el otro peon blanco). 
+                                    Es importante destacar dos elementos estratégicos del juego español. 
+                                    Por una parte la importancia del Alfil que corre por casillas blancas, que muchas veces llamado Alfil Español. 
+                                    En muchas disposiciones se vuelve una de las armas más incisivas de las que se dispone para atacar el enroque rival. 
+                                    Por lo cual cuidar de esta pieza es fundamental.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>...</td>
+                                <td id="mn3">a6</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Línea principal, se desprende de la Variante Morphy que se produce después de 3. … a6
+                                    Aunque parezca contraintuitiva esta jugada (porque presiona al alfil que amenaza al caballo)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>...</td>
+                                <td id="mn4">d6</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Defensa Steinitz, una de las formas que tiene el negro de responder a la amenaza blanca es defendiendo 
+                                    a su peón de e5. 
+                                    Las blancas suelen contraatacar con d4 lo que les otorga una ventaja ligera pero estable.
+                                    Existe también la versión moderna que prefiere 3. … a6 para luego 4. … d6. 
+                                    La cual se ha considerado mejor y con más opciones para las negras.  
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>...</td>
+                                <td id="mn5">Cc6</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Defensa Berlinesa, el plan de las negras es contraatacar en el centro, 
+                                    capturando el peón de la casilla e4; inducir un cambio rápido de damas que, 
+                                    aunque antiguamente se consideraba malo para las negras por haber perdido el enroque, 
+                                    la teoría actual demuestra que es muy complicado y depende mucho de la visión estratégica del jugador.  
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>...</td>
+                                <td id="mn6">f5</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Defensa Schliemann
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>...</td>
+                                <td id="mn7">Cd4</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2">
+                                    Defensa Bird
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </body>
+</html>
